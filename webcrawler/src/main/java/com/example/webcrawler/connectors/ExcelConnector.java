@@ -1,5 +1,6 @@
 package com.example.webcrawler.connectors;
 
+import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 @Component
+@Slf4j
 public class ExcelConnector {
 
     public void excelConnectorMethod() throws IOException {
@@ -17,7 +19,7 @@ public class ExcelConnector {
 
         Element element = document.select("a").first();
 
-        System.out.println(element.absUrl("href"));
+        log.info("The hyper link is :: " + element.absUrl("href"));
 
 
     }
